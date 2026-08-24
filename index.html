@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BassMetrik Labs | Precision Built for Bass</title>
+  <meta name="description" content="Bass-focused measurement and protection tools engineered for real numbers, clean power, and repeatable results.">
+  <meta property="og:title" content="BassMetrik Labs | Precision Built for Bass">
+  <meta property="og:description" content="Measurement and protection tools for real numbers, clean power, and repeatable results.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bassmetriklabs.com/">
+  <meta property="og:image" content="https://bassmetriklabs.com/logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bassmetriklabs.com/logo.svg">
+  <meta name="theme-color" content="#080a0e">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="BassMetrik Labs home"><img src="logo.svg" alt="BassMetrik Labs"></a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="signal" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> Engineering in progress</p>
+        <h1>Precision built<br><em>for bass.</em></h1>
+        <p class="hero-copy">Measurement and protection tools for people who want real numbers, clean power, and results they can repeat.</p>
+        <a class="primary-button" href="#contact">Get in touch <span aria-hidden="true">↘</span></a>
+      </div>
+      <p class="scroll-note" aria-hidden="true">BassMetrik Labs / Seattle, WA</p>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-intro">
+        <p class="section-number">01 / CONTACT</p>
+        <h2>Let's talk.</h2>
+        <p>Have a question, an idea, or want to know when we launch? Drop us a line.</p>
+      </div>
+
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/mqpzonoy" method="post">
+        <p class="form-status" id="form-status" role="status" hidden></p>
+        <div class="field-grid">
+          <label><span>Name</span><input type="text" name="name" autocomplete="name" maxlength="100" required></label>
+          <label><span>Email</span><input type="email" name="email" autocomplete="email" maxlength="254" required></label>
+        </div>
+        <label><span>Message</span><textarea name="message" rows="5" maxlength="5000" required></textarea></label>
+        <input type="hidden" name="_subject" value="BassMetrik Labs website inquiry">
+        <label class="honeypot" aria-hidden="true"><span>Company website</span><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+        <div class="form-footer">
+          <p>Your information is used only to reply to your message.</p>
+          <button type="submit" id="submit-button">Send message <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <img src="logo.svg" alt="" aria-hidden="true">
+      <p>© 2026 BassMetrik Labs LLC. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    const button = document.getElementById('submit-button');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      button.disabled = true;
+      button.firstChild.textContent = 'Sending… ';
+      status.hidden = true;
+      status.classList.remove('error');
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' }
+        });
+        if (!response.ok) throw new Error('Submission failed');
+        form.reset();
+        status.textContent = 'Thanks — your message has been sent.';
+      } catch (error) {
+        status.textContent = 'The message could not be sent right now. Please try again shortly.';
+        status.classList.add('error');
+      } finally {
+        status.hidden = false;
+        button.disabled = false;
+        button.firstChild.textContent = 'Send message ';
+      }
+    });
+  </script>
+</body>
+</html>
