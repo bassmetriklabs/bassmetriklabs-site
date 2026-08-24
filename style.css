@@ -40,5 +40,32 @@ footer img { height:50px; width:116px; }
 footer p { font-size:10px; letter-spacing:.1em; margin:0; text-transform:uppercase; }
 .form-status { border-left:3px solid var(--blue); color:#5a6069; margin:0 0 28px; padding:12px 16px; }
 .form-status.error { border-color:#c0392b; }
+@media(min-width:781px) and (max-width:1600px){
+  .site-header{height:195px;padding:16px 51px 0}
+  .brand{height:165px;width:379px}
+  .nav-link{font-size:9px;margin-top:9px;padding:7px 0}
+  .hero{background-size:48px 48px,48px 48px,auto,auto;padding:180px 93px 54px}
+  .hero-content{max-width:587px}
+  .eyebrow,.section-number{font-size:9px;margin-bottom:20px}
+  .eyebrow span{height:5px;margin-right:8px;width:5px}
+  h1{font-size:clamp(62px,6.2vw,100px)}
+  .hero-copy{font-size:clamp(15px,1.05vw,17px);margin:29px 0 25px;max-width:427px}
+  .primary-button,.contact-form button{font-size:9px;gap:29px;min-width:137px;padding:12px 14px}
+  .scroll-note{bottom:23px;font-size:7px;right:51px}
+  .signal{gap:9px;height:240px;right:clamp(-100px,1vw,13px)}
+  .signal span{width:6px}
+  .contact-section{gap:clamp(43px,6vw,100px);padding:clamp(62px,7.3vw,113px) 93px}
+  .contact-intro h2{font-size:clamp(48px,4vw,61px);margin-bottom:19px}
+  .contact-intro>p:last-child{font-size:14px;max-width:320px}
+  .contact-form{padding-top:29px}
+  .field-grid{gap:20px}
+  .contact-form label{margin-bottom:22px}
+  .contact-form label>span{font-size:8px}
+  .form-footer{gap:19px}
+  .form-footer p{font-size:9px}
+  footer{padding:27px 51px}
+  footer img{height:34px;width:78px}
+  footer p{font-size:8px}
+}
 @media(max-width:780px){.site-header{height:200px;padding-top:18px}.brand{height:160px;width:260px}.nav-link{margin-top:10px}.hero{min-height:900px;padding-top:250px}.hero::after{left:15%;top:62%;width:100%}.signal{opacity:.12;right:-230px;top:39%}.hero-copy{margin-top:36px}.contact-section{grid-template-columns:1fr}.contact-form{padding-top:0}.field-grid{grid-template-columns:1fr;gap:0}.form-footer{align-items:flex-start;flex-direction:column}footer{align-items:flex-start;flex-direction:column;gap:24px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.primary-button,.contact-form button{transition:none}}
